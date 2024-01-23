@@ -1,3 +1,5 @@
+// get posts from dummy api
+
 const axios = require("axios");
 
 const getPost = async (id) => {
@@ -20,6 +22,8 @@ const getPost = async (id) => {
   }
 };
 
+// Get user data from dummy api
+
 const getUser = async (id) => {
   try {
     const result = await axios.get(
@@ -37,6 +41,8 @@ const getUser = async (id) => {
   }
 };
 
+// server run on local 8000
+
 const tryIt = async () => {
   try {
     await getPost("65adda018be17a4bd499e341");
@@ -46,4 +52,15 @@ const tryIt = async () => {
   }
 };
 
-tryIt();
+const http = require("http");
+const port = 8000;
+
+const server = http.createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader("Content-Type", "text/plain");
+  res.end("Hello World! \nstfu");
+});
+
+server.listen(port, () => {
+  console.log(`Server running at http://localhost:${port}/`);
+});
