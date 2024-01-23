@@ -51,16 +51,34 @@ const tryIt = async () => {
     console.log(error.message);
   }
 };
-
 const http = require("http");
-const port = 8000;
+const { open } = require("node:fs/promises");
 
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader("Content-Type", "text/plain");
-  res.end("Hello World! \nstfu");
+const getWords = async () => {
+  const words = [];
+
+  const file = await open("./info.txt");
+  const text = await file.readLines();
+
+  for await (const line of text) {
+    words.push(line);
+  }
+  return words;
+};
+
+const port = 8000;
+const server = http.createServer(async (request, response) => {
+  const words = await getWords();
+  const newWords = words.map((el) => {
+    return el.split(",");
+  })[0];
+
+  response.statusCode = 200;
+  response.setHeader("Content-Type", "text/plain");
+
+  response.end(`${newWords[0]} ,${newWords[1]}, hi`);
 });
 
 server.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}/`);
+  console.log(`Server running at http://localhost:${port}`);
 });
