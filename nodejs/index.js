@@ -51,6 +51,7 @@ const tryIt = async () => {
     console.log(error.message);
   }
 };
+
 const http = require("http");
 const { open } = require("node:fs/promises");
 
@@ -68,15 +69,20 @@ const getWords = async () => {
 
 const port = 8000;
 const server = http.createServer(async (request, response) => {
-  const words = await getWords();
-  const newWords = words.map((el) => {
-    return el.split(",");
-  })[0];
+  try {
+    const words = await getWords();
+    const newWords = words.map((el) => {
+      return el.split(",");
+    })[0];
+    return newWords;
+  } catch (error) {
+    console.log(error.message);
+  }
 
   response.statusCode = 200;
   response.setHeader("Content-Type", "text/plain");
 
-  response.end(`${newWords[0]} ,${newWords[1]}, hi`);
+  response.end(`${newWords[0]} ,${newWords[1]}, hello`);
 });
 
 server.listen(port, () => {
