@@ -1,14 +1,14 @@
 {
   "users": [
+    { "id": "admin", "email": "admin@gmail.com", "password": "admin" },
+    { "id": "user", "email": "user@gmail.com", "password": "user" },
+    { "id": "admin1", "password": "98876", "email": "z@gmail" },
+    { "id": "admin1", "password": "98876", "email": "z@gmail" },
+
     {
-      "id": "admin",
-      "email": "admin@gmail.com",
-      "password": "admin"
-    },
-    {
-      "id": "user",
-      "email": "user@gmail.com",
-      "password": "user"
+      "id": "shitass",
+      "password": "shitasspassword",
+      "email": "shitass@gmail.com"
     }
   ]
 }
