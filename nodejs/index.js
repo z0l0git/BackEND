@@ -14,7 +14,7 @@ app.get("/", async (req, res) => {
     await access(filePath);
     res.status(200);
     const data = fs.readFileSync(filePath);
-    res.send(JSON.parse(data).users.map((el) => el.email));
+    res.send(JSON.parse(data));
   } catch (err) {
     res.status(404).send("File not found");
   }
@@ -23,6 +23,11 @@ app.get("/", async (req, res) => {
 app.post("/", async (req, res) => {
   try {
     const { id, password, email } = req.body;
+    if (!email || !password || !id) {
+      // bgaa esehiig shalgah
+      throw new Error("Missing Params");
+    }
+
     const data = await JSON.parse(fs.readFileSync(filePath));
     if (data.users.find((el) => el.email === email)) {
       res.status(400).send("User Already Exists");
