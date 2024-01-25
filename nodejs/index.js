@@ -24,6 +24,11 @@ app.post("/", async (req, res) => {
   try {
     const { id, password, email } = req.body;
     const data = await JSON.parse(fs.readFileSync(filePath));
+    if (data.users.find((el) => el.email === email)) {
+      res.status(400).send("User Already Exists");
+      return;
+    }
+
     data.users.push({ id, password, email });
     await writeFile(filePath, JSON.stringify(data));
     res.status(200);
