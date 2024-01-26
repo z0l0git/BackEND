@@ -1,1 +1,40 @@
-{"users":[{"id":"admin","email":"admin@gmail.com","password":"admin"},{"id":"user","email":"user@gmail.com","password":"user"},{"id":"admin1","password":"98876","email":"z@gmail"},{"id":"shitass","password":"shitasspassword","email":"shitass@gmail.com"},{"id":"123","password":"1232","email":"123@gmail.com"}]}
+{
+  "users": [
+    {
+      "id": "admin",
+      "email": "admin@gmail.com",
+      "password": "passwordAdmin",
+      "username": "adminname"
+    },
+    {
+      "id": "USERID",
+      "email": "user@gmail.com",
+      "password": "USERPAss",
+      "username": "username"
+    },
+    {
+      "id": "ZGmailUser",
+      "password": "passwordZgmail",
+      "email": "z@gmail",
+      "username": "ZgmailUser"
+    },
+    {
+      "id": "shitass",
+      "password": "shitasspassword",
+      "email": "shitass@gmail.com",
+      "username": "shitass"
+    },
+    {
+      "id": "123",
+      "password": "1232",
+      "email": "123@gmail.com",
+      "username": "123"
+    },
+    {
+      "id": "Zolo123",
+      "password": "password",
+      "email": "z@gmail.com",
+      "username": "Zolo123"
+    }
+  ]
+}

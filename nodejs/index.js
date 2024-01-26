@@ -1,5 +1,5 @@
 import express from "express";
-import fs from "fs";
+import fs, { readFile } from "fs";
 import { writeFile } from "node:fs/promises";
 import { unlink, access } from "node:fs/promises";
 
@@ -9,11 +9,31 @@ app.use(express.json());
 
 const filePath = "/Users/23LP5833/Desktop/backend/nodejs/mockuser.json";
 
+const ReadFile = async () => {
+  try {
+    const oldUsers = await fs.readFileSync("./mockuser.json", "utf-8");
+    return oldUsers;
+  } catch (err) {
+    return null;
+  }
+};
+
+const readNotes = async () => {
+  try {
+    const oldNotes = await fs.readFileSync("./notes.json", "utf-8");
+    return oldNotes;
+  } catch (err) {
+    return null;
+  }
+};
+
+app.get("/notes", async (req, res) => {});
+
 app.get("/", async (req, res) => {
   try {
     await access(filePath);
     res.status(200);
-    const data = fs.readFileSync(filePath);
+    const data = fs.readFileSync("./mockuser.json", "utf-8");
     res.send(JSON.parse(data));
   } catch (err) {
     res.status(404).send("File not found");
@@ -21,26 +41,49 @@ app.get("/", async (req, res) => {
 });
 
 app.post("/", async (req, res) => {
+  const { id, password, email } = req.body;
+  if (!email || !password || !id) {
+    // bgaa esehiig shalgah
+    throw new Error("Missing Params");
+  }
   try {
-    const { id, password, email } = req.body;
-    if (!email || !password || !id) {
-      // bgaa esehiig shalgah
-      throw new Error("Missing Params");
+    const isFileExist = await ReadFile();
+
+    if (!isFileExist) {
+      await fs.writeFileSync("./mockuser.json", JSON.stringify({ users: [] }));
     }
 
-    const data = await JSON.parse(fs.readFileSync(filePath));
+    const newUserFile = await ReadFile();
+    const data = JSON.parse(newUserFile);
+
     if (data.users.find((el) => el.email === email)) {
       res.status(400).send("User Already Exists");
       return;
     }
 
     data.users.push({ id, password, email });
-    await writeFile(filePath, JSON.stringify(data));
+    await writeFile("./mockuser.json", JSON.stringify(data));
     res.status(200);
     res.sendFile(filePath);
   } catch (err) {
     res.status(404).send("none existent");
   }
+});
+
+app.post("/update", async (req, res) => {
+  const { id, email: upEmail, password } = req.body;
+  const allUsers = await ReadFile();
+  const { users } = JSON.parse(allUsers);
+  const correctUser = users.find(({ email }) => {
+    if (email === upEmail) {
+      return true;
+    }
+  });
+  correctUser.id = id;
+  correctUser.password = password;
+
+  await writeFile("./mockuser.json", JSON.stringify({ users }));
+  res.send("update");
 });
 
 app.delete("/", async (req, res) => {
