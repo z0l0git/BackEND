@@ -1,0 +1,26 @@
+[
+  {
+    "username": "mockuser",
+    "email": "mockuser@gmail.com",
+    "password": "passwordmock",
+    "followers": "999",
+    "following": "100",
+    "profile_pic": "mock.img"
+  },
+  {
+    "username": "ZoloUpdated2",
+    "email": "zolo@gmail.com",
+    "password": "zolopassword",
+    "followers": "1",
+    "following": "220",
+    "profile_pic": "zolo4.img"
+  },
+  {
+    "username": "Admin",
+    "email": "admin@gmail.com",
+    "password": "adminpassword",
+    "followers": "infinte",
+    "following": "none",
+    "profile_pic": "admin.img"
+  }
+]

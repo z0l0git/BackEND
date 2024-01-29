@@ -1,8 +1,10 @@
 {
   "notes": [
-    {
-      "texts": "",
-      "userID": ""
-    }
+    { "texts": "", "userID": "" },
+    { "userID": "Admin", "texts": "i think this is texts on user Admin" },
+    { "userID": "User", "texts": "texts on user USER" },
+    { "userID": "Admin", "texts": "2nd texts from Admin" },
+    { "userID": "Admin", "texts": "2nd texts from Admin" },
+    { "userID": "User", "texts": "2nd texts from user" }
   ]
 }
