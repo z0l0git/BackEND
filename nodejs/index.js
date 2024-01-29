@@ -1,9 +1,7 @@
 import express from "express";
 import userRouter from "./routes/userRouter.js";
+import postRouter from "./routes/postRouter.js";
 import cors from "cors";
-import fs, { readFile } from "fs";
-import { writeFile } from "node:fs/promises";
-import { unlink, access } from "node:fs/promises";
 
 const port = 4000;
 const app = express();
@@ -11,6 +9,7 @@ app.use(express.json());
 app.use(cors());
 
 app.use(userRouter);
+app.use(postRouter);
 
 app.listen(port, () => {
   console.log(`Server is listening on port ${port}`);

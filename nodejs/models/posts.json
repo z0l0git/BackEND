@@ -1,0 +1,55 @@
+[
+  {
+    "userID": "Admin",
+    "post_imgs": ["img1", "img2"],
+    "created_at": "2023-01-20",
+    "likes": "10",
+    "comments": [
+      { "commenter": "Zolo", "comment": "Hello bitch", "comment_like": "2" },
+      { "commenter": "User", "comment": "Yuugne sda", "comment_like": "-1" }
+    ]
+  },
+  {
+    "userID": "Zolo",
+    "post_imgs": ["img1"],
+    "created_at": "2024-01-12",
+    "likes": "10",
+    "comments": [
+      {
+        "commenter": "Admin",
+        "comment": "Aldaa shaawal alna",
+        "comment_like": "100"
+      }
+    ]
+  },
+  {
+    "userID": "User",
+    "post_imgs": ["img1", "img2", "img3"],
+    "created_at": "2023-12-31",
+    "likes": "340",
+    "comments": [
+      { "commenter": "Admin", "comment": "OOO psda", "comment_like": "400" }
+    ]
+  },
+  {
+    "userID": "Admin",
+    "post_imgs": ["img1", "img2"],
+    "created_at": "2022-01-01",
+    "likes": "10",
+    "comments": []
+  },
+  {
+    "userID": "Admin",
+    "post_imgs": ["postimg1", "postimg2"],
+    "likes": "0",
+    "created_at": "2024-01-30",
+    "comments": []
+  },
+  {
+    "userID": "User",
+    "post_imgs": ["userimg1"],
+    "likes": "0",
+    "created_at": "2024-01-30",
+    "comments": []
+  }
+]

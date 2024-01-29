@@ -1,5 +1,4 @@
-import { getUserByEmail } from "../queries/user/getUser.js";
-import { allUsers } from "../queries/user/getUser.js";
+import { getUserByEmail, allUsers } from "../queries/user/getUser.js";
 import { createNewUser } from "../queries/user/createUser.js";
 import { updateUser } from "../queries/user/updateUser.js";
 import { deleteUser } from "../queries/user/deleteUser.js";
