@@ -3,6 +3,8 @@ import {
   getAllPostsService,
   getPostByIdService,
   createPostService,
+  deletePostService,
+  updatePostService,
 } from "../controllers/postsController.js";
 
 const postRouter = express.Router();
@@ -15,6 +17,9 @@ postRouter.get("/posts/:userID", getPostByIdService);
 postRouter.post("/posts", createPostService);
 
 //Put Functions
+postRouter.put("/posts/:id", updatePostService);
 
 //Delete Functions
+postRouter.delete("/posts/:id", deletePostService);
+
 export default postRouter;

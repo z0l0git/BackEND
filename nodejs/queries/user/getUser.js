@@ -1,9 +1,9 @@
 import fs from "fs";
 
-const userDB =
-  "C:/Users/zolba/OneDrive/Desktop/Projects/Backend/BackEND/nodejs/models/users.json";
+// const userDB =
+//   "C:/Users/zolba/OneDrive/Desktop/Projects/Backend/BackEND/nodejs/models/users.json";
 
-// const userDB = "/Users/23LP5833/Desktop/backend/nodejs/models/users.json";
+const userDB = "/Users/23LP5833/Desktop/backend/nodejs/models/users.json";
 
 // Get user by email
 

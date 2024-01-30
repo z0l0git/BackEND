@@ -1,6 +1,9 @@
 import fs from "fs";
-const postDB =
-  "C:/Users/zolba/OneDrive/Desktop/Projects/Backend/BackEND/nodejs/models/posts.json";
+import { v4 } from "uuid";
+// const postDB =
+//   "C:/Users/zolba/OneDrive/Desktop/Projects/Backend/BackEND/nodejs/models/posts.json";
+
+const postDB = "/Users/23LP5833/Desktop/backend/nodejs/models/posts.json";
 
 const date = new Date();
 
@@ -20,6 +23,7 @@ export const createPost = async (req, res) => {
     const data = JSON.parse(newPost);
     data.push({
       userID: params.userID,
+      id: v4(),
       post_imgs: params.post_imgs,
       likes: params.likes,
       created_at: `${currentYear}-${currentMonth}-${currentDay}`,
