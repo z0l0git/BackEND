@@ -3,7 +3,7 @@
 import fs from "fs";
 // const userDB =
 //   "C:/Users/zolba/OneDrive/Desktop/Projects/Backend/BackEND/nodejs/models/users.json";
-const userDB = "/Users/23LP5833/Desktop/backend/nodejs/models/users.json";
+const userDB = "./models/users.json";
 
 export const updateUser = async (req, res) => {
   const {

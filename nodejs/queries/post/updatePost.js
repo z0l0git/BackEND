@@ -2,7 +2,7 @@ import fs from "fs";
 
 // const postDB =
 //   "C:/Users/zolba/OneDrive/Desktop/Projects/Backend/BackEND/nodejs/models/posts.json";
-const postDB = "/Users/23LP5833/Desktop/backend/nodejs/models/posts.json";
+const postDB = "./models/posts.json";
 
 export const updatePost = async (req, res) => {
   const { post_imgs, likes, comments } = req.body;

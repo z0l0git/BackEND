@@ -1,6 +1,6 @@
 import fs from "fs";
 
-const postDB = "/Users/23LP5833/Desktop/backend/nodejs/models/posts.json";
+const postDB = "./models/posts.json";
 
 export const deletePost = async (req, res) => {
   const { id } = req.params;
