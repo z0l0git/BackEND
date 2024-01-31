@@ -1,14 +1,27 @@
-import { getUserByEmail, allUsers } from "../queries/user/getUser.js";
+import {
+  getUserByEmail,
+  allUsers,
+  getLoggedInUser,
+} from "../queries/user/getUser.js";
 import { createNewUser } from "../queries/user/createUser.js";
 import { updateUser } from "../queries/user/updateUser.js";
 import { deleteUser } from "../queries/user/deleteUser.js";
-import { loginUser } from "../queries/user/loginUser.js";
+
 //Get user by Email
 
 export const getUserByEmailService = async (req, res) => {
   try {
     const user = await getUserByEmail(req);
     res.send(JSON.stringify(user));
+  } catch (err) {
+    res.status(500).send(err.message);
+  }
+};
+
+export const getLoggedInUserService = async (req, res) => {
+  try {
+    const user = await getLoggedInUser(req);
+    res.send(user);
   } catch (err) {
     res.status(500).send(err.message);
   }
@@ -30,17 +43,6 @@ export const getAllUsersService = async (req, res) => {
 export const createNewUserService = async (req, res) => {
   try {
     const user = await createNewUser(req);
-    res.send(JSON.stringify(user));
-  } catch (err) {
-    res.status(500).send(err.message);
-  }
-};
-
-//Login user
-
-export const loginUserService = async (req, res) => {
-  try {
-    const user = await loginUser(req);
     res.send(JSON.stringify(user));
   } catch (err) {
     res.status(500).send(err.message);

@@ -4,7 +4,8 @@ import { getAllUsersService } from "../controllers/usersController.js";
 import { createNewUserService } from "../controllers/usersController.js";
 import { updateUserService } from "../controllers/usersController.js";
 import { deleteUserService } from "../controllers/usersController.js";
-import { loginUserService } from "../controllers/usersController.js";
+import { getLoggedInUserService } from "../controllers/usersController.js";
+import { loginUser } from "../middleware/loginUser.js";
 
 const userRouter = express.Router();
 
@@ -16,7 +17,7 @@ userRouter.get("/users", getAllUsersService);
 //Post Functions
 
 userRouter.post("/users", createNewUserService);
-userRouter.post("/users/login", loginUserService);
+userRouter.post("/users/login", loginUser, getLoggedInUserService);
 
 //Update Functions
 
