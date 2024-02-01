@@ -1,6 +1,7 @@
 //Update User
 
 import fs from "fs";
+import { makeHash } from "../../utils/passwordHash.js";
 // const userDB =
 //   "C:/Users/zolba/OneDrive/Desktop/Projects/Backend/BackEND/nodejs/models/users.json";
 const userDB = "./models/users.json";
@@ -34,7 +35,7 @@ export const updateUser = async (req, res) => {
     const index = users.findIndex((user) => user.email === upEmail);
     const updatedUser = {
       ...user,
-      password,
+      password: makeHash(password),
       username,
       followers,
       following,

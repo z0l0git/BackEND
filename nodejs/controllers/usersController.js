@@ -20,8 +20,8 @@ export const getUserByEmailService = async (req, res) => {
 
 export const getLoggedInUserService = async (req, res) => {
   try {
-    const user = await getLoggedInUser(req);
-    res.send(user);
+    res.status(200);
+    res.send(req.userData);
   } catch (err) {
     res.status(500).send(err.message);
   }

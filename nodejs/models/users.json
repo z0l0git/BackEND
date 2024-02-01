@@ -2,7 +2,7 @@
   {
     "username": "mockuser",
     "email": "mockuser@gmail.com",
-    "password": "passwordmock",
+    "password": "$2b$10$1ZN5boDD3e/QUWxdJdh/6u/Z4IjkB/qMKTFsY55h68w4enJVhZy8W",
     "followers": "999",
     "following": "100",
     "profile_pic": "mock.img"
@@ -10,7 +10,7 @@
   {
     "username": "ZoloUpdated2",
     "email": "zolo@gmail.com",
-    "password": "zolopassword",
+    "password": "$2b$10$qsN8E/KkRvHptdUr48jksOCG/eXJ05cEOZCVTF02TKFvossimvvRC",
     "followers": "1",
     "following": "220",
     "profile_pic": "zolo4.img"
@@ -18,9 +18,25 @@
   {
     "username": "Admin",
     "email": "admin@gmail.com",
-    "password": "adminpassword",
+    "password": "$2b$10$EsxwwsW4P2vH5KYXPwd8N.9qrgDeMMhV8P4PowALcuEB3CmucPgTS",
     "followers": "infinte",
     "following": "none",
     "profile_pic": "admin.img"
+  },
+  {
+    "username": "HashedUser",
+    "email": "hashuser@gmail.com",
+    "password": "$2b$10$nSPlW4YIsnow0pXC9rGWeO8h37bLhVPV2tdBca8RZOWZGtUvAnCBy",
+    "followers": "0",
+    "following": "10",
+    "profile_pic": "hash.img"
+  },
+  {
+    "username": "ZoloUpdated2",
+    "email": "zolo123@gmail.com",
+    "password": "$2b$10$JcnLtkAIwtNBdhbpPMfn9uWd3Bzn0QS3ch/f6bkVa6hxOOgcNfCpW",
+    "followers": "1",
+    "following": "220",
+    "profile_pic": "zolo4.img"
   }
 ]

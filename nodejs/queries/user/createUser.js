@@ -1,6 +1,7 @@
 //Create user
 
 import fs from "fs";
+import { makeHash } from "../../utils/passwordHash.js";
 
 // const userDB =
 //   "C:/Users/zolba/OneDrive/Desktop/Projects/Backend/BackEND/nodejs/models/users.json";
@@ -30,7 +31,7 @@ export const createNewUser = async (req, res) => {
     data.push({
       username,
       email,
-      password,
+      password: makeHash(password),
       followers,
       following,
       profile_pic,

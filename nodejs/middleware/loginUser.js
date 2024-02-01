@@ -1,5 +1,6 @@
 import fs from "fs";
 const userDB = "./models/users.json";
+import { compareHash } from "../utils/passwordHash.js";
 
 export const loginUser = async (req, res, next) => {
   const { email, password } = req.body;
@@ -12,7 +13,10 @@ export const loginUser = async (req, res, next) => {
     if (!user) {
       throw new Error("Invalid email or password");
     }
-    if (user.password === password) {
+    const checkPassword = compareHash(password, user.password);
+
+    if (checkPassword) {
+      req.userData = user;
       next();
     } else {
       throw new Error("Invalid email or password");
