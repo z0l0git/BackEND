@@ -1,10 +1,10 @@
-export const CreateUser = (props) => {
-  const { displayCheck = false } = props;
+import { useState } from "react";
 
-  const display = "block";
-  const displayNone = "none";
+export const CreateUser = (props) => {
+  const { displayCheck = true } = props;
+
   return (
-    <div className={{ display }}>
+    <div className={`${displayCheck ? "hidden" : "hidden"}`}>
       <h2>Create User</h2>
       <div>
         <label>Username</label>
