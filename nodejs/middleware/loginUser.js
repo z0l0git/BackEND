@@ -19,7 +19,7 @@ export const loginUser = async (req, res, next) => {
       req.userData = user;
       next();
     } else {
-      throw new Error("Invalid email or password");
+      res.send("Invalid email or password");
     }
   } catch (error) {
     res.send(error.message);
